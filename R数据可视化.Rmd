@@ -1,0 +1,208 @@
+---
+title: "R鏁版嵁鍙鍖<96>"
+author: "瀹嬫槍鎰<8f>"
+date: "2017骞<b4>10鏈<88>21鏃<a5>"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+这是我在学习慕课网的R语言之数据可视化的时候的笔记，相关课程可以在 <http://www.imooc.com>找到.
+
+```{r cars}
+#R语言之数据可视化
+
+#1-1简介
+
+#1-2数据科学家需要具备的知识和技能
+#计算机+统计+业务
+
+#1-3完整的数据分析流程
+#定义问题，定义理想数据集，确定能够获取的数据
+#获取数据
+#清理数据
+#探索性分析（数据可视化）
+#统计分析/建模（机器学习）
+#解释/交流结果（数据可视化）
+#挑战结果
+#书写报告
+
+#假设驱动VS数据驱动
+
+#2-1R语言数据基础
+#观测（行）、变量（列）、数据矩阵
+#变量类型
+#数值型（连续型和离散型）；分类（空间有限，无序和有序）
+#变量间的关系（对应不同的可视化和统计方法）
+
+#2-2数值变量的特征和可视化
+#集中趋势测量：均值，中位数，众数（出现最多的数）
+#分散趋势：值域，方差，标准差，四分位距
+x<-c(1,9,2,8,3,9,4,5,7,6)
+mean(x)
+median(x)
+var(x)
+sd(x)
+summary(x)
+#稳健统计量：中位数、四分位差（受极端影响小）
+#一个变量：柱状图、点图、箱图
+#两个变量：散点图（方向、形状、强度、极端值）
+
+#2-3分类变量特征和数据可视化
+#一个分类变量：频率表、条形图
+#两个分类变量：关联表、相对频率表
+#分段条形图、相对频率分段条形图、马赛克图
+#一个分类一个数值：并排箱图
+
+#3-1三大绘图系统简介
+#1.基本绘图系统：绘图始于空白
+#两步=图+修饰=执行一系列函数
+#适用于2D图
+#2.Lattice绘图系统
+#一次调用函数，适合观测变量交互
+#3.ggplot2绘图
+#把数据映射到几何客体。是前两者的合体
+
+#3-2基本绘图系统之基础知识
+#graphics包
+#调用函数会启动一个图形设备并绘图
+#plot(x,y,...) /xlab/ylab/lwd/lty/pch/col
+#par() 用于设置全局参数
+#bg/mar/las/mfrow/mfcol
+
+#3-3基本绘图系统实践
+hist(airquality$Wind)
+hist(airquality$Wind,xlab="ind")
+boxplot(airquality$Wind,xlab="Wind",ylab="Speed(mph)")
+boxplot(Wind~Month, airquality, xlab="Month",ylab="Speed (mph)")
+plot(airquality$Wind,airquality$Temp)
+with(airquality,plot(Wind,Temp))
+title(main = "Wind and temp in NYC")
+with(airquality,plot(Wind,Temp,main="Wind&Temp"))
+
+with(airquality,plot(Wind,Temp,
+                     main="Wind&Temp",
+                     type="n"))
+with(subset(airquality,Month==9),
+     points(Wind,Temp,col="red"))
+with(subset(airquality,Month==5),
+     points(Wind,Temp,col="blue"))
+with(subset(airquality,Month%in%c(6,7,8)),
+     points(Wind,Temp,col="black"))
+fit<-lm(Temp~Wind, airquality)
+abline(fit,lwd=2)
+legend("topright",pch=1,
+       col=c("red","blue","black"),
+       legend = c("Sep","May","Other"))
+
+#3-4基本绘图系统之全局参数
+par("bg")
+par("col")
+par("mar") #(bottom,left,top,right)
+par("mfrow")
+par("mfcol")
+
+par(mfrow=c(1,2))
+hist(airquality$Wind)
+hist(airquality$Temp)
+
+par(mfrow=c(1,1))
+boxplot(airquality$Temp)
+
+par(mfrow=c(2,1))
+hist(airquality$Wind)
+hist(airquality$Temp)
+
+#3-5Lattice绘图系统基础知识
+#lattice包
+
+#3-7ggplot2绘图基础知识
+#层（Layer）
+#绘图函数
+#qplot() 隐藏绘图细节
+#ggplot 核心，本身不能绘图
+
+#3-8ggplot2绘图之qplot
+library(ggplot2)
+qplot(Wind, Temp, data = airquality, color=as.factor(Month))
+airquality$Month<-factor(airquality$Month)
+qplot(Wind, Temp, data = airquality, color=I("red"))
+qplot(Wind, Temp, data = airquality, shape=Month)
+qplot(Wind, Temp, data = airquality, size=Month)
+qplot(Wind, Temp, data = airquality, size=I(5),
+      xlab = "Wind (mph)",ylab = "Temperature",
+      main = "Wind vs Temp")
+
+qplot(Wind, Temp, data = airquality, color = Month,
+      geom = c("point","smooth"))
+qplot(Wind, Temp, data = airquality, color = as.factor(Month),
+      geom = c("point","smooth"))
+qplot(Wind, Temp, data = airquality, 
+      facets = .~Month,
+      geom = c("point","smooth"))
+qplot(Wind,data = airquality, facets = .~Month)
+qplot(Wind,data = airquality)
+qplot(y=Wind,data = airquality)
+qplot(Wind,data = airquality,fill=Month)
+qplot(Wind,data = airquality,geom = "density",
+      color=Month)
+qplot(Wind,data = airquality,geom = "dotplot")
+
+#3-9ggplot
+library(ggplot2)
+ggplot(airquality,aes(Wind,Temp)) #本身不能绘图
+ggplot(airquality,aes(Wind,Temp)) + 
+    geom_point(aes(color=factor(Month)),alpha=0.4,size=5)
+ggplot(airquality,aes(Wind,Temp)) + 
+    geom_point() + 
+    geom_smooth()
+ggplot(airquality,aes(Wind,Temp)) +
+    stat_smooth(method = "lm",se=FALSE)
+ggplot(airquality,aes(Wind,Temp)) +
+  stat_smooth(method = "lm",se=FALSE,aes(col=factor(Month)))
+ggplot(airquality,aes(Wind,Temp,
+                      col=factor(Month))) +
+  geom_point() + 
+  stat_smooth(method = "lm",se=FALSE,aes(group=1)) + 
+  stat_smooth(method = "lm",se=FALSE)
+
+library(RColorBrewer)
+myColors<-c(brewer.pal(5,"Dark2"),"black")
+display.brewer.pal(5,"Dark2")
+
+ggplot(airquality,aes(Wind,Temp,
+                      col=factor(Month))) +
+  geom_point() + 
+  stat_smooth(method = "lm",se=FALSE,aes(group=1,col="All")) + 
+  stat_smooth(method = "lm",se=FALSE) + 
+  scale_color_manual("Month",values = myColors)
+
+ggplot(airquality,aes(Wind,Temp,
+                      col=factor(Month))) +
+  geom_point() + 
+  stat_smooth(method = "lm",se=FALSE) + 
+  scale_color_manual("Month",values = myColors) +
+  facet_grid(.~Month) + 
+  theme_classic()
+#?theme
+#3-10Rcolor
+#grDevice
+#颜色名字可以使用colors()获取
+#RColorBrewer
+
+#3-12探索性数据分析
+#目的：了解数据特征
+#图与数字互相验证
+#1.凸显比较（谁和谁比）
+#2.凸显机制（因果/机制/解释）
+#3.凸显多元性（逃离扁平）
+#4.整合证据
+#5.适当的图标、尺度
+#6.内容是王道
+```
