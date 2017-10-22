@@ -1,0 +1,13 @@
+GitHub (imooc)
+
+1-1 Intro
+  Git->GitHub
+  
+1-2 GitHub from Website
+  私有项目需要付费 //private project
+  大部分操作都是围绕项目
+  new repository //新仓库
+  commit //（做）版本
+  commit new file : version+description
+  版本号->详情 //项目名+commit+版本号
+  git保存目前版本和父版本的号 //改版历史线
