@@ -1,2 +1,2 @@
-# R-Study
-This part is for R study notes/codes.
+# Study notes
+This part is for my study notes/codes.
