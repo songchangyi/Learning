@@ -1,7 +1,138 @@
-子雨大数据之Spark入门教程(Python版)
+子雨大数据之Spark入门教程(Python版) (http://dblab.xmu.edu.cn/blog/1709-2/)
  
 第3章 Spark编程基础
+
+$3.1 Spark入门：RDD编程
+
 1.RDD创建
 RDD可以通过两种方式创建：
-* 第一种：读取一个外部数据集。比如，从本地文件加载数据集，或者从HDFS文件系统、HBase、Cassandra、Amazon S3等外部数据源中加载数据集。Spark可以支持文本文件、SequenceFile文件（Hadoop提供的 SequenceFile是一个由二进制序列化过的key/value的字节流组成的文本存储文件）和其他符合Hadoop InputFormat格式的文件。
+* 第一种：读取一个外部数据集。比如，从本地文件加载数据集，或者从HDFS文件系统、HBase、Cassandra、Amazon S3
+  等外部数据源中加载数据集。Spark可以支持文本文件、SequenceFile文件（Hadoop提供的 SequenceFile是一个由
+  二进制序列化过的key/value的字节流组成的文本存储文件）和其他符合Hadoop InputFormat格式的文件。
 * 第二种：调用SparkContext的parallelize方法，在Driver中一个已经存在的集合（数组）上创建。
+
+2.创建RDD之前的准备工作
+from pyspark import SparkContext
+sc = SparkContext()
+
+3.从文件系统中加载数据创建RDD
+lines = sc.textFile("hdfs://localhost:9000/user/hadoop/word.txt")
+lines = sc.textFile("/user/hadoop/word.txt")
+lines = sc.textFile("word.txt")
+注意，上面三条命令是完全等价的命令，只不过使用了不同的目录形式。
+
+在使用Spark读取文件时，需要说明以下几点：
+（1）如果使用了本地文件系统的路径，那么，必须要保证在所有的worker节点上，也都能够采用相同的路径访问到该文件，
+    比如，可以把该文件拷贝到每个worker节点上，或者也可以使用网络挂载共享文件系统。
+（2）textFile()方法的输入参数，可以是文件名，也可以是目录，也可以是压缩文件等。
+    比如，textFile(“/my/directory”), textFile(“/my/directory/.txt”), and textFile(“/my/directory/.gz”).
+（3）textFile()方法也可以接受第2个输入参数（可选），用来指定分区的数目。默认情况下，Spark会为HDFS的每个block
+    创建一个分区（HDFS中每个block默认是128MB）。你也可以提供一个比block数量更大的值作为分区数目，但是，你不能
+    提供一个小于block数量的值作为分区数目。
+
+4.通过并行集合（数组）创建RDD
+可以调用SparkContext的parallelize方法，在Driver中一个已经存在的集合（数组）上创建。
+nums = [1,2,3,4,5]
+rdd = sc.parallelize(nums)
+
+5.RDD操作
+RDD被创建好以后，在后续使用过程中一般会发生两种操作：
+* 转换（Transformation）： 基于现有的数据集创建一个新的数据集。
+* 行动（Action）：在数据集上进行运算，返回计算值。
+
+5.1.转换操作
+对于RDD而言，每一次转换操作都会产生不同的RDD，供给下一个“转换”使用。转换得到的RDD是惰性求值的，也就是说，
+整个转换过程只是记录了转换的轨迹，并不会发生真正的计算，只有遇到行动操作时，才会发生真正的计算，开始从血缘
+关系源头开始，进行物理的转换操作。
+下面列出一些常见的转换操作（Transformation API）：
+* filter(func)：筛选出满足函数func的元素，并返回一个新的数据集
+* map(func)：将每个元素传递到函数func中，并将结果返回为一个新的数据集
+* flatMap(func)：与map()相似，但每个输入元素都可以映射到0或多个输出结果
+* groupByKey()：应用于(K,V)键值对的数据集时，返回一个新的(K, Iterable)形式的数据集
+* reduceByKey(func)：应用于(K,V)键值对的数据集时，返回一个新的(K, V)形式的数据集，其中的每个值是将每个key
+传递到函数func中进行聚合
+
+5.2行动操作
+行动操作是真正触发计算的地方。Spark程序执行到行动操作时，才会执行真正的计算，从文件中加载数据，完成一次又一次
+转换操作，最终，完成行动操作得到结果。
+下面列出一些常见的行动操作（Action API）：
+* count() 返回数据集中的元素个数
+* collect() 以数组的形式返回数据集中的所有元素
+* first() 返回数据集中的第一个元素
+* take(n) 以数组的形式返回数据集中的前n个元素
+* reduce(func) 通过函数func（输入两个参数并返回一个值）聚合数据集中的元素
+* foreach(func) 将数据集中的每个元素传递到函数func中运行*
+
+6.惰性机制
+这里给出一段简单的代码来解释Spark的惰性机制。
+lines = sc.textFile("data.txt")
+lineLengths = lines.map(lambda s : len(s))
+totalLength = lineLengths.reduce( lambda a, b : a + b)
+上面第一行首先从外部文件data.txt中构建得到一个RDD，名称为lines，但是，由于textFile()方法只是一个转换操作，
+因此，这行代码执行后，不会立即把data.txt文件加载到内存中，这时的lines只是一个指向这个文件的指针。
+第二行代码用来计算每行的长度（即每行包含多少个单词），同样，由于map()方法只是一个转换操作，这行代码执行后，
+不会立即计算每行的长度。
+第三行代码的reduce()方法是一个“动作”类型的操作，这时，就会触发真正的计算。这时，Spark会把计算分解成多个任务
+在不同的机器上执行，每台机器运行位于属于它自己的map和reduce，最后把结果返回给Driver Program。
+
+7.实例
+下面是一个关于filter()操作的实例：
+lines = sc.textFile("file:///usr/local/spark/mycode/rdd/word.txt")
+lines.filter(lambda line : "Spark" in line).count()
+这里再给出另外一个实例，我们要找出文本文件中单行文本所包含的单词数量的最大值，代码如下：
+lines = sc.textFile("file:///usr/local/spark/mycode/rdd/word.txt")
+lines.map(lambda line : len(line.split(" "))).reduce(lambda a,b : (a > b and a or b))
+
+8.持久化
+前面我们已经说过，在Spark中，RDD采用惰性求值的机制，每次遇到行动操作，都会从头开始执行计算。如果整个Spark
+程序中只有一次行动操作，这当然不会有什么问题。但是，在一些情形下，我们需要多次调用不同的行动操作，这就意味着，
+每次调用行动操作，都会触发一次从头开始的计算。这对于迭代计算而言，代价是很大的，迭代计算经常需要多次重复使用
+同一组数据。
+比如，下面就是多次计算同一个RDD的例子：
+list = ["Hadoop","Spark","Hive"]
+rdd = sc.parallelize(list)
+print(rdd.count()) //行动操作，触发一次真正从头到尾的计算
+print(','.join(rdd.collect())) //行动操作，触发一次真正从头到尾的计算
+上面代码执行过程中，前后共触发了两次从头到尾的计算。
+实际上，可以通过持久化（缓存）机制避免这种重复计算的开销。可以使用persist()方法对一个RDD标记为持久化，之所以
+说“标记为持久化”，是因为出现persist()语句的地方，并不会马上计算生成RDD并把它持久化，而是要等到遇到第一个行动
+操作触发真正计算以后，才会把计算结果进行持久化，持久化后的RDD将会被保留在计算节点的内存中被后面的行动操作重复
+使用。persist()的圆括号中包含的是持久化级别参数，比如，persist(MEMORY_ONLY)表示将RDD作为反序列化的对象存储
+于JVM中，如果内存不足，就要按照LRU原则替换缓存中的内容。persist(MEMORY_AND_DISK)表示将RDD作为反序列化的对象
+存储在JVM中，如果内存不足，超出的分区将会被存放在硬盘上。一般而言，使用cache()方法时，会调用persist(MEMORY_ONLY)。
+例子如下：
+>>> list = ["Hadoop","Spark","Hive"]
+>>> rdd = sc.parallelize(list)
+>>> rdd.cache()  //会调用persist(MEMORY_ONLY)，但是，语句执行到这里，并不会缓存rdd，这是rdd还没有被计算生成
+>>> print(rdd.count()) //第一次行动操作，触发一次真正从头到尾的计算，这时才会执行上面的rdd.cache()，把这个rdd放到缓存中
+>>> print(','.join(rdd.collect())) //第二次行动操作，不需要触发从头到尾的计算，只需要重复使用上面缓存中的rdd
+最后，可以使用unpersist()方法手动地把持久化的RDD从缓存中移除。
+
+9.分区
+RDD是弹性分布式数据集，通常RDD很大，会被分成很多个分区，分别保存在不同的节点上。RDD分区的一个分区原则是使得分区
+的个数尽量等于集群中的CPU核心（core）数目。对于不同的Spark部署模式而言（本地模式、Standalone模式、YARN模式、
+Mesos模式），都可以通过设置spark.default.parallelism这个参数的值，来配置默认的分区数目，一般而言：
+*本地模式：默认为本地机器的CPU数目，若设置了local[N],则默认为N；
+*Apache Mesos：默认的分区数为8；
+*Standalone或YARN：在“集群中所有CPU核心数目总和”和“2”二者中取较大值作为默认值；
+因此，对于parallelize而言，如果没有在方法中指定分区数，则默认为spark.default.parallelism，比如：
+>>> array = [1,2,3,4,5]
+>>> rdd = sc.parallelize(array,2) #设置两个分区
+对于textFile而言，如果没有在方法中指定分区数，则默认为min(defaultParallelism,2)，其中，defaultParallelism
+对应的就是spark.default.parallelism。
+如果是从HDFS中读取文件，则分区数为文件分片数(比如，128MB/片)。
+
+10.打印元素
+在实际编程中，我们经常需要把RDD中的元素打印输出到屏幕上（标准输出stdout），一般会采用语句rdd.foreach(print)
+或者rdd.map(print)。当采用本地模式（local）在单机上执行时，这些语句会打印出一个RDD中的所有元素。但是，当采用
+集群模式执行时，在worker节点上执行打印语句是输出到worker节点的stdout中，而不是输出到任务控制节点Driver Program中，
+因此，任务控制节点Driver Program中的stdout是不会显示打印语句的这些输出内容的。为了能够把所有worker节点上的打印
+输出信息也显示到Driver Program中，可以使用collect()方法，比如，rdd.collect().foreach(print)，但是，由于collect()
+方法会把各个worker节点上的所有RDD元素都抓取到Driver Program中，因此，这可能会导致内存溢出。因此，当你只需要
+打印RDD的部分元素时，可以采用语句rdd.take(100).foreach(print)。
+//运行错误：AttributeError: 'list' object has no attribute 'foreach'
+//解决办法：for i in rdd.take(100): print(i) 或者for i in rdd.collect(): print(i)
+
+## 注释：
+RDD是Spark中的抽象数据结构类型，任何数据在Spark中都被表示为RDD。 从编程的角度来看，RDD可以简单看成是一个数组。
+和普通数组的区别是，RDD中的数据是分区存储的，这样不同分区的数据就可以分布在不同的机器上，同时可以被并行处理。
