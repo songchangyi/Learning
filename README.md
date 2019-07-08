@@ -1,6 +1,6 @@
 # My learnings
 
-Include but are not limited to : 
+Includes but is not limited to : 
 
 - ML / NLP / DL basic knowledge
 - Frameworks : Tensorflow, Keras, Pytorch
