@@ -1,81 +1,53 @@
-# RASA Installation
+# RASA Usage
 
-## Install Virtual Machine
+Official Tutorial : https://rasa.com/docs/rasa/user-guide/rasa-tutorial/
 
-PS : memory >= 2G to avoid the Spacy package installation problem
-
-## Install Anaconda
-
-## Install RASA
-
-#### Create a virtual environment
+### Lanch RASA
 
 ```
-conda create -n rasa python=3.6
+source activate rasa
 ```
 
-To remove : 
-```
-conda remove --name rasa --all
-```
-
-### Install RASA
+Check RASA version (Linux OS)
 
 ```
-sudo apt update
+pip freeze|grep rasa
 ```
 
-```
-sudo apt install python3-dev python3-pip
-```
+Free disk space taken by anaconda
 
 ```
-pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
+conda clean --all
 ```
 
-```
-conda install spacy
-```
-
+### Create a new project
 
 ```
-python -m spacy download en
-```
-
-```
+cd WORK_FOLDER_PATH
 rasa init
 ```
 
-### Common commands
-
-#### Train bot
+### View training data
 
 ```
-rasa train
+cat data/nlu.md
 ```
 
-#### Talk to the trained bot
+Training data format : https://rasa.com/docs/rasa/nlu/training-data-format/#training-data-format
+
+### Model config
 
 ```
-rasa shell
+cat config.yml
 ```
 
-#### To get answer with confidence score
+Pipeline info : https://rasa.com/docs/rasa/nlu/choosing-a-pipeline/#choosing-a-pipeline
 
+
+### Write stories
 ```
-rasa shell --debug
+cat data/stories.md
 ```
 
-### Files
-
-#### ./data/nlu.md
-Training corpus
-
-PS : each time after an update, we need to change domain.yml as well.
-
-#### ./data/stories.md
-Dialogs
-
-#### config.yml
-Configurations : language, pipeline, etc.
+Story details : https://rasa.com/docs/rasa/core/stories/#stories
 
