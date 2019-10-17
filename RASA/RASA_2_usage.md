@@ -51,3 +51,17 @@ cat data/stories.md
 
 Story details : https://rasa.com/docs/rasa/core/stories/#stories
 
+### Define domain
+```
+cat domain.yml
+```
+
+### Train model
+```
+rasa train
+```
+
+### Talk to assistant
+```
+rasa shell
+```
