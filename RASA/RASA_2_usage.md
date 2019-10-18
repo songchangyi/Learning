@@ -35,6 +35,8 @@ cat data/nlu.md
 
 Training data format : https://rasa.com/docs/rasa/nlu/training-data-format/#training-data-format
 
+Json data demo : https://github.com/RasaHQ/rasa/blob/master/data/examples/rasa/demo-rasa.json
+
 ### Model config
 
 ```
