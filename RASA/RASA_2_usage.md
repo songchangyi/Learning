@@ -67,3 +67,37 @@ rasa train
 ```
 rasa shell
 ```
+
+### Run an NLU server
+```
+rasa run --enable-api -m models/20191016-110318.tar.gz --endpoints endpoints.yml --port 5002 --credentials credentials.yml
+```
+
+- 20191016-110318.tar.gz : model to use
+- credentials.yml : 
+```
+rest:
+```
+- endpoints.yml : 
+```
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+```
+
+Get response : 
+
+- curl
+```
+curl localhost:5002/model/parse -d '{"text":"hello"}'
+```
+- python requests
+```
+import requests
+
+data = '{"text":"hello"}'
+url  = 'http://localhost:5002/model/parse'
+
+r = requests.post(url, data=data)
+r.json()
+```
+
