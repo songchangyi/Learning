@@ -68,6 +68,11 @@ rasa train
 rasa shell
 ```
 
+### Train NLU
+```
+rasa train nlu
+```
+
 ### Run an NLU server
 ```
 rasa run --enable-api -m models/20191016-110318.tar.gz --endpoints endpoints.yml --port 5002 --credentials credentials.yml
