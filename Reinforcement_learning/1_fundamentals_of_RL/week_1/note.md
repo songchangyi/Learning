@@ -26,17 +26,42 @@ The goal is to maximize the expected reward : argmax(q*(a))
 ## Lesson 2: What to Learn? Estimating Action Values
 ### Define action-value estimation methods
 
+Sample-average = sum of rewards when a taken prior to t / number of times a taken prior to t
+
+Greedy action : chose the current best
+
 ### Define exploration and exploitation
+
+exploration - exploitation dilemma : 探索-利用困境
+
 ### Select actions greedily using an action-value function
 ### Define online learning
+
+Incremental update rule : new_estimate = old_estimate + step_size * (target - old_estimate)
+
+Q_n+1 = (R_n - Q_n) / n + Q_n
+
 ### Understand a simple online sample-average action-value estimation method
 ### Define the general online update equation
+
+Exponential, recency−weighted average : 
+
+Q_n+1 = (1 - alpha) ^ n * Q_1 + sum(alpha * (1 - alpha) ^ (n - i) * R_i)
+
 ### Understand why we might use a constant stepsize in the case of non-stationarity
+
+To convergent ?
 
 ## Lesson 3: Exploration vs. Exploitation Tradeoff
 ### Compare the short-term benefits of exploitation and the long-term benefits of exploration
+
+Epsilon-Greedy Action Selection : P_epsilon to explore, (1 - P_epsilon) to exploit
+
 ### Understand optimistic initial values
 ### Describe the benefits of optimistic initial values for early exploration
+
+Drive early exploration
+
 ### Explain the criticisms of optimistic initial values
 ### Describe the upper confidence bound action selection method
 ### Define optimism in the face of uncertainty
