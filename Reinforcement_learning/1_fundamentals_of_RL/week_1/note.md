@@ -63,5 +63,10 @@ Epsilon-Greedy Action Selection : P_epsilon to explore, (1 - P_epsilon) to explo
 Drive early exploration
 
 ### Explain the criticisms of optimistic initial values
-### Describe the upper confidence bound action selection method
+### Describe the upper confidence bound (UCB) action selection method
+
+将每个action的评估值和不确定性值均考虑在内
+
 ### Define optimism in the face of uncertainty
+
+observe feature=>choose action=>observe reward=>...
