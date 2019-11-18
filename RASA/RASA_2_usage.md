@@ -73,6 +73,17 @@ rasa shell
 rasa train nlu
 ```
 
+### Cross validation
+```
+rasa test nlu -u data/nlu.md --config config.yml --cross-validation
+```
+
+### Comparing NLU Pipelines
+```
+rasa test nlu --config pretrained_embeddings_spacy.yml supervised_embeddings.yml
+  --nlu data/nlu.md --runs 3 --percentages 0 25 50 70 90
+```
+
 ### Run an NLU server
 ```
 rasa run --enable-api -m models/20191016-110318.tar.gz --endpoints endpoints.yml --port 5002 --credentials credentials.yml
