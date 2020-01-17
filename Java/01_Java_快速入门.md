@@ -34,7 +34,7 @@ Java ME就和Java SE不同，它是一个针对嵌入式设备的“瘦身版”
 - JSR规范：Java Specification Request
 - JCP组织：Java Community Process
 
-# 1-2 安装JDK
+## 1-1 安装JDK
 Download : https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html
 
 - java：这个可执行程序其实就是JVM，运行Java程序，就是启动JVM，然后让JVM执行指定的编译后的代码；
@@ -43,7 +43,7 @@ Download : https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downlo
 - javadoc：用于从Java源码中自动提取注释并生成文档；
 - jdb：Java调试器，用于开发阶段的运行调试。
 
-# 1-3 第一个Java程序
+## 1-2 第一个Java程序
 ```
 public class Hello {
     public static void main(String[] args) {
@@ -55,6 +55,16 @@ public class Hello {
 - 一个Java源码只能定义一个public类型的class，并且class名称和文件名要完全一致；
 - 使用javac可以将.java源码编译成.class字节码；
 - 使用java可以运行一个已编译的Java程序，参数是类名。
+
+## 1-3 Java代码助手
+## 1-4 IDE
+IDE是集成开发环境：Integrated Development Environment的缩写。
+
+- Eclipse (https://www.eclipse.org/downloads/packages/)
+- IntelliJ Idea
+- NetBeans
+
+## 1-5 IDE练习插件
 
 # 2 Java程序基础
 
