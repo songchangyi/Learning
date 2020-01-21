@@ -321,5 +321,66 @@ names[1] = "cat";
 仅仅是将names[1]的引用从指向"XYZ"改成了指向"cat"，其结果是字符串"XYZ"再也无法通过names[1]访问到了。
 
 # 3 流程控制
+## 3-1 输入和输出
+
+### 输出
+```
+System.out.println();
+System.out.print()
+```
+
+### 格式化输出
+```
+System.out.printf("%.2f\n", d);
+System.out.printf("n=%d, hex=%08x", n, n); // 注意，两个%占位符必须传入两个数
+```
+详细的格式化参数请参考JDK文档java.util.Formatter
+
+### 输入
+```
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // 创建Scanner对象
+        System.out.print("Input your name: "); // 打印提示
+        String name = scanner.nextLine(); // 读取一行输入并获取字符串
+        System.out.print("Input your age: "); // 打印提示
+        int age = scanner.nextInt(); // 读取一行输入并获取整数
+        System.out.printf("Hi, %s, you are %d\n", name, age); // 格式化输出
+    }
+}
+```
+System.out代表标准输出流，而System.in代表标准输入流。直接使用System.in读取用户输入虽然是可以的，但需要更复杂的代码，而通过Scanner就可以简化后续的代码。
+
+有了Scanner对象后，要读取用户输入的字符串，使用scanner.nextLine()，要读取用户输入的整数，使用scanner.nextInt()。Scanner会自动转换数据类型，因此不必手动转换。要测试输入，我们不能在线运行它，因为输入必须从命令行读取，因此，需要走编译、执行的流程。
+
+## 3-2 if判断
+```
+public class Main {
+    public static void main(String[] args) {
+        int n = 70;
+        if (n >= 90) {
+            System.out.println("优秀");
+        } else if (n >= 60) {
+            System.out.println("及格了");
+        } else {
+            System.out.println("挂科了");
+        }
+        System.out.println("END");
+    }
+}
+```
+
+### 判断值相等
+利用差值小于某个临界值来判断。
+
+### 判断是否指向同一对象
+==
+
+### 判断引用内容相等
+equals()
+
+### 3-3 switch多重选择
 
 # 4 数组操作
