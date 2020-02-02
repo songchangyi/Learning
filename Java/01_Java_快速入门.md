@@ -381,6 +381,68 @@ public class Main {
 ### 判断引用内容相等
 equals()
 
-### 3-3 switch多重选择
+## 3-3 switch多重选择
+switch语句根据switch (表达式)计算的结果，跳转到匹配的case结果，然后继续执行后续语句，直到遇到break结束执行。
+
+```
+public class Main {
+    public static void main(String[] args) {
+        int option = 1;
+        switch (option) {
+        case 1:
+            System.out.println("Selected 1");
+            break;
+        case 2:
+        case 3:
+            System.out.println("Selected 2/3");
+            break;
+        case "mango":
+            System.out.println("Selected mango");
+            break;
+        default:
+            System.out.println("Not selected");
+            break;
+        }
+    }
+}
+```
+
+对于多个==判断的情况，使用switch结构更加清晰。
+
+### switch表达式
+使用switch时，如果遗漏了break，就会造成严重的逻辑错误，而且不易在源代码中发现错误。从Java 12开始，switch语句升级为更简洁的表达式语法，使用类似模式匹配（Pattern Matching）的方法，保证只有一种路径会被执行，并且不需要break语句：
+```
+public class Main {
+    public static void main(String[] args) {
+        String fruit = "apple";
+        int opt = switch (fruit) {
+            case "apple" -> 1;
+            case "pear", "mango" -> 2;
+            default -> 0;
+        }; // 注意赋值语句要以;结束
+        System.out.println("opt = " + opt);
+    }
+}
+```
+
+### yield
+```
+public class Main {
+    public static void main(String[] args) {
+        String fruit = "orange";
+        int opt = switch (fruit) {
+            case "apple" -> 1;
+            case "pear", "mango" -> 2;
+            default -> {
+                int code = fruit.hashCode();
+                yield code; // switch语句返回值
+            }
+        };
+        System.out.println("opt = " + opt);
+    }
+}
+```
+
+使用switch实现一个简单的石头、剪子、布游戏。???
 
 # 4 数组操作
