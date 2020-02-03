@@ -443,6 +443,25 @@ public class Main {
 }
 ```
 
-使用switch实现一个简单的石头、剪子、布游戏。???
+## 3-4 while循环
+```
+public class Main {
+    public static void main(String[] args) {
+        int sum = 0; // 累加的和，初始化为0
+        int n = 1;
+        while (n <= 100) { // 循环条件是n <= 100
+            sum = sum + n; // 把n累加到sum中
+            n ++; // n自身加1
+        }
+        System.out.println(sum); // 5050
+    }
+}
+```
+
+## 3-5 do while循环
+在Java中，while循环是先判断循环条件，再执行循环。而另一种do while循环则是先执行循环，再判断条件，条件满足时继续循环，条件不满足时退出。
+
+## 3-6 for循环
+
 
 # 4 数组操作
