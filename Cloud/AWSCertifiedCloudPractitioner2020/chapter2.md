@@ -47,3 +47,9 @@ Endpoints used for caching content. Consists of CloudFront, Content Delivery Net
 - AWS Services
 
 ## 2.3 Let's Log In To AWS
+Support plans : basic, developer (29$/month), business (100$/month), entreprise (15000$/month)
+
+## 2.5 Setting Up On A Windows PC
+
+## 2.6 Setting Up A Billing Alarm
+Services->Cloud Watch->Billing
