@@ -53,3 +53,15 @@ Support plans : basic, developer (29$/month), business (100$/month), entreprise 
 
 ## 2.6 Setting Up A Billing Alarm
 Services->Cloud Watch->Billing
+
+## 2.7 Let’s Start To Cloud! Identity Access Management (IAM)
+multi-factor authentication (MFA)
+
+Access management : Programmatic access (command line), AWS Management CONSOLE access, SDK (Software Developers Kit)
+
+### Exam Tips
+- Do not specify a region when dealing with IAM.
+- The root account always has full administrator access.
+- Apply a policy (consist of JSON, Java Script Object Notation) to a group to set permissions.
+
+## 2.8 S3 101
