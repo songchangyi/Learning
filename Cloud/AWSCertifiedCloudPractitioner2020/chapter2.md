@@ -65,3 +65,77 @@ Access management : Programmatic access (command line), AWS Management CONSOLE a
 - Apply a policy (consist of JSON, Java Script Object Notation) to a group to set permissions.
 
 ## 2.8 S3 101
+S3 - Simple Storage Service, from 2006-2007
+
+- A safe place to store flat files (file doesn't change)
+- Object-based storage, opposite to block based storage
+- The data is spread across multiple devices and facilities
+
+### The basics of S3
+- S3 is Object-based
+- Files can be from 0 Bytes to 5 TB
+- Unlimited storage
+- Files stored in buckets (folder in cloud)
+- S3 is a universal namespace (unique name globally)
+- Receive a HTTP 200 code if upload successful
+
+### S3-Objects
+Objects consist of the following :
+- Key (name of object)
+- Value (data)
+- Version ID
+- Metadata (data about data you are storing)
+- Subresources (Access Control Lists, Torrent)
+
+### Data Consistency Model for S3
+- Read after Write consistency for PUTS of new Objects (upload and read immediately OK)
+- Eventual Consistency for overwrite PUTS and DELETES (takes time to propagate)
+
+### S3 - Guarantees
+- Built for 99.99% availability for S3 platform
+- Amazon guarantee 99.9% availability
+- Amazon guarantees 99.999999999% (11 * 9) durability for S3 information
+
+### S3 - Features
+- Tiered Storage Available
+- Lifecycle Management
+- Versioning
+- Encryption
+- Secure data using Access Control Lists (file level) and Bucket Policies (bucket level)
+
+### S3 Storage Classes
+1.S3 Standard
+
+2.S3 - IA (infrequently accessed), more rapid when needed
+
+3.S3 One Zone - IA
+
+4.S3 - Intelligent Tiering (machine learning)
+
+5.S3 Glacier, for data archiving (from minutes to hours)
+
+6.S3 Glacier Deep Archive, for deep data archiving (12hrs)
+
+### S3 - Charges
+- Storage
+- Requests
+- Storage Management Pricing
+- Data Transfer Pricing
+- Transfer Acceleration (edge location)
+- Cross Region Replication Pricing (disaster recovery)
+
+### Exam Tips
+- S3 is object-based
+- Files from 0 Bytes to 5 TB
+- Unlimited storage
+- Files stored in Buckets
+- S3 is a universal namespace
+- https://s3-eu-west-1.amazonaws.com/acloudguru
+- Not suitable to install an OS
+- HTTP 200 when upload success
+- Key-Value pairs
+- Consistency for PUTS
+- Eventual Consistency for overwrite PUTS and DELETES
+- 6 different S3 storage
+
+## 2.9 Let's Create An S3 Bucket!
