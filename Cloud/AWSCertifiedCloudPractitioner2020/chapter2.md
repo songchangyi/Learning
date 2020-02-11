@@ -224,3 +224,10 @@ FIGHT DR. MCPXZ
 GP2, IO1, ST1, SC1
 
 ## 2.13 Let's Use EC2
+
+### Exam Tips
+- Use a private key to connect to EC2
+
+## 2.14 Using The Command Line
+
+## 2.15 Using Roles
