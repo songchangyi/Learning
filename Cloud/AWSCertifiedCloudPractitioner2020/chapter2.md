@@ -139,3 +139,28 @@ Objects consist of the following :
 - 6 different S3 storage
 
 ## 2.9 Let's Create An S3 Bucket!
+Restricting Bucket Access
+- Bucket Policies
+- Object Policies
+- IAM Policies to Users & Groups
+
+## 2.10 Let's Create A Website On S3
+S3 can host STATIC websites
+
+## 2.11 Let's Explore CloudFront
+A content delivery server (CDN) is a system of distributed servers that deliver web content.
+
+### CloudFront - Key Terminology
+- Edge location : cache content
+- Origin : S3 Buckets, EC2 Instance, etc.
+- Distribution : a collection of edge locations
+
+- Web distribution
+- RTMP : Media Streaming
+
+### Exam Tips
+- Edge locations are not just READ only.
+- Objects are cached for the life of the TTL (Time To Live)
+- Clear cached objects will be charged
+
+## 2.12 EC2 101
