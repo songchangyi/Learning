@@ -168,3 +168,59 @@ EC2 - Elastic Compute Cloud, a virtual server in the cloud.
 
 ### EC2 pricing models
 1. On demand
+2. Reserved : capacity reservation
+3. Spot
+4. Dedicated Hosts
+
+### On Demand pricing
+- low cost and flexibility
+- applications cannot be interrupted
+- applications being developped or tested on EC2 for the first time
+
+### Reserved pricing
+- steady state or predictable usage
+- reserved capacity
+- make upfront payments to reduce their total computing costs even further
+
+1. Standard Reserved instances
+2. Convertible Reserved instances
+3. Scheduled Reserved instances
+
+### Spot pricing
+- flexible start and end times
+- feasible at very low compute prices
+- urgent computing needs for large amounts of additional capacity
+
+### Dedicated Hosts pricing
+- regulatory requirements that may not support multi-tenant virtualization
+- licensing which does not support multi-tenancy or cloud deployments
+- Can be purchased On-Demand
+- Can be purchased as a Reservation for up to 70% off the On-Demand price
+
+### EC2 Instance Types - Mnemonic
+FIGHT DR. MCPXZ
+
+### EBS
+The virtual hard disks in the cloud that EC2 uses.
+
+#### SSD
+- GP2, General Purpose SSD
+- IO1, Provisioned IOPS SSD
+
+#### Magnetic
+- ST1, Throughput Optimized HDD
+- SC1, Cold HDD
+
+### Exam Tips
+a virtual server in the cloud
+
+1. On demand
+2. Reserved : capacity reservation
+3. Spot
+4. Dedicated Hosts
+
+FIGHT DR. MCPXZ
+
+GP2, IO1, ST1, SC1
+
+## 2.13 Let's Use EC2
