@@ -164,3 +164,7 @@ A content delivery server (CDN) is a system of distributed servers that deliver 
 - Clear cached objects will be charged
 
 ## 2.12 EC2 101
+EC2 - Elastic Compute Cloud, a virtual server in the cloud.
+
+### EC2 pricing models
+1. On demand
