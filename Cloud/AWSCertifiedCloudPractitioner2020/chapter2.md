@@ -231,3 +231,20 @@ GP2, IO1, ST1, SC1
 ## 2.14 Using The Command Line
 
 ## 2.15 Using Roles
+
+### Exam Tips
+- Roles are much more secure than using access key id's and secret access keys and are easier to manage.
+- Apply roles to EC2 instances at any time.
+- Roles are universal.
+
+## 2.16 Let's Build A Web Server
+
+## 2.17 Let's Use A Load Balancer
+### Exam Tips
+- Application Load Balancers, Intelligent Decisions
+- Netword Load Balancers, Extreme Performance
+- Classic Load Balancers, Test & Dev
+
+## 2.18 Databases 101
+
+
