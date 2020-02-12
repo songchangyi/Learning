@@ -246,5 +246,39 @@ GP2, IO1, ST1, SC1
 - Classic Load Balancers, Test & Dev
 
 ## 2.18 Databases 101
+Relational database on AWS - RDS (OLTP)
+- SQL Server
+- Oracle
+- MySQL Server
+- PostgreSQL
+- Aurora
+- MariaDB
 
+### RDS key features
+- Multi-AZ :for disaster recovery
+- Read Replicas : for performance
 
+### Non relational database
+- Collection = Table
+- Document   = Row
+- K-V pairs  = Fields
+
+Columns can vary, this will not affect other rows in the DB
+
+Non-Relational database on AWS - DynamoDB
+
+### OLTP vs OLAP
+OLTP : online transaction processing
+OLAP : online analytics processing
+
+Amazon's Data Warehouse (BI) Solution is called Redshift
+
+ElastiCache : cache engine in the cloud (web service) that caching your most common queries. 2 different caching engines : 
+- Memcached
+- Redis
+
+## 2.19 Let's provision an RDS instance
+
+## 2.20 Autoscaling
+
+## 2.21 Let's Register A Domain Name
