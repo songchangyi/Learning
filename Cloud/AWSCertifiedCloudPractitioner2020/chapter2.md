@@ -282,3 +282,15 @@ ElastiCache : cache engine in the cloud (web service) that caching your most com
 ## 2.20 Autoscaling
 
 ## 2.21 Let's Register A Domain Name
+DNS : Domain Name System
+
+Use Alias to redirect
+
+Amazons DNS Service is called Route53, it's global.
+- direct trafic
+- register a domain name
+
+## 2.22 Elastic Beanstalk
+Quickly deploy and manage applications in AWS without worrying about the infrastructure.
+
+## 2.23 CloudFormation
