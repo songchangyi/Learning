@@ -301,3 +301,59 @@ Elastic Beanstalk and CloudFormation are both FREE services, however the resourc
 EB is limited in what it can provision and is not programmable. CF can provision almost any AWS service and is completely programmable.
 
 ## 2.24 Architecting For The Cloud Best Practices - Part 1
+### Traditional Computing vs Cloud Computing
+- IT Assets as Provisioned Resources
+- Global, Available and Scaleable Capacity
+- Higher Level Managed Services
+- Built-in Security
+- Architecting For Cost
+- Operations on AWS
+
+### Scalability
+- Scale Up
+- Scale Out
+  - Stateless Applications
+  - Distribute Load To Multiple Nodes
+  - Stateless Components
+  - Stateful Components
+  - Implement Session Affinity
+  - Distributed Processing
+  - Implement Distributed Processing
+
+### Disposable Resources Instead of Fixed Servers
+#### Instantiating Compute Resources
+- Bootstrapping
+- Golden Images
+- Containers
+- Hybrid
+
+#### Infrastructure As Code
+- CloudFormation
+
+### Automation
+#### Serverless Management and Deployment
+#### Infrastructure Management and Deployment
+- AWS Elastic Beanstalk
+- EC2 auto recovery
+- System Manager
+- Auto Scaling
+
+#### Alarms and Events
+- CloudWatch alarms
+- CloudWatch Events
+- Lambda scheduled events
+- WAF security automations
+
+### Loose Coupling
+#### Well Defined Interfaces
+- Amazon API Gateway
+#### Service Discovery
+- Implement Service Discovery
+#### Distributed Systems Best Practices
+- Graceful Failure in Practice
+
+### Services Not Servers
+- Managed Services
+- Serverless Architectures
+
+## 2.25 Architecting For The Cloud Best Practices - Part 2
