@@ -294,3 +294,10 @@ Amazons DNS Service is called Route53, it's global.
 Quickly deploy and manage applications in AWS without worrying about the infrastructure.
 
 ## 2.23 CloudFormation
+A service that helps you model and set up your AWS resources. It takes care of provisioning and configuring those resources for you.
+
+Elastic Beanstalk and CloudFormation are both FREE services, however the resources they provision are not free.
+
+EB is limited in what it can provision and is not programmable. CF can provision almost any AWS service and is completely programmable.
+
+## 2.24 Architecting For The Cloud Best Practices - Part 1
