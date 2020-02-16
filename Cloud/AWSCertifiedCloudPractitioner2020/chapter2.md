@@ -357,3 +357,115 @@ EB is limited in what it can provision and is not programmable. CF can provision
 - Serverless Architectures
 
 ## 2.25 Architecting For The Cloud Best Practices - Part 2
+### Databases
+#### Relational Databases (Aurora)
+- Scalability
+- High Availability
+- Anti-Patterns : no need for joins or complex transactions, use No-SQL
+
+#### Non-Relational Databases (DynamoDB)
+- Scalability
+- High Availability
+- Anti-Patterns : requires joins or complex transactions, use relational databases. Use Amazon S3 if large binary files.
+
+#### Data Warehouses (Redshift)
+- Scalability
+- High Availability
+- Anti-Patterns : not meant for OLTP
+
+#### Search (Amazon CloudSearch and Amazon Elasticsearch Service (Amazon ES))
+- Scalability
+- High Availability
+
+#### Graph Databases (Neptune)
+- Scalability
+- High Availability
+
+### Removing Single Points of Failure
+- Introduction Redundancy
+- Detect Failure
+- Durable Data Storage
+- Automated Multi-Data Centre Resilience
+- Fault Isolation and Traditional Horizontal Scaling
+- Sharding
+
+### Optimize For Cost
+- Right Sizing
+- Elasticity
+- Take Advantage of the Variety of Purchasing Options
+  - Reserved Capacity
+  - Spot Instances
+
+### Caching
+- Application Caching
+- Edge Caching : CloudFront
+
+### Security
+- Use AWS Features for Defense in Depth
+- Share Security Responsibility with AWS
+- Reduce Privileged Access
+- Security as code
+- Real-time Auditing
+
+## 2.26 Global AWS Services
+### Global
+- IAW
+- Route53
+- CloudFront
+- SNS
+- SES
+
+### Global views but Regional
+- S3
+
+## 2.27 What AWS Services Can Be Deployed On Premise
+- Snowball (gigantic disk)
+- Snowball Edge (CPU)
+- Storage Gateway (caching)
+- CodeDeploy (deploy applications)
+- Opsworks
+- IoT Greengrass
+
+### What AWS Services Can Be Used to Deploy Applications On Premise
+- Code Deploy
+- Opsworks
+
+## 2.28 CloudWatch 101
+### Definition
+A monitoring service to monitor your AWS resources as well as your applications
+
+### CloudWatch can monitor things like
+- Compute
+  - EC2 Instances (every 5 minutes)
+  - Autoscaling Groups
+  - Elastic Load Balancers
+  - Route53 Health Checks
+- Storage & Content Delivery
+  - EBS Volumes
+  - Storage Gateways
+  - CloudFront
+
+### Host Level Metrics
+- CPU
+- Network
+- Disk
+- Status Check
+
+### Exam Tips
+- Have 1 minute intervals by turning on detailed monitoring
+- Create CloudWatch alarms which trigger notifications
+- CloudWatch is all about performance
+
+## 2.29 AWS Systems Manager
+Allows you to manage your EC2 instances at scale.
+
+EC2 fleet (multiple EC2 instances)
+
+### Exam Tips
+- Manage fleets of EC2 instances & virtual machines.
+- A piece of software is installed on each VM.
+- Both inside AWS and on promise.
+- Run Command is used to install, patch, uninstall software.
+- Integrates with CloudWatch to give you a dashboard of your entire estate.
+
+## 2.30 Cloud Concepts & Technology Summary - Part 1
