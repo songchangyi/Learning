@@ -199,6 +199,18 @@ EC2 - Elastic Compute Cloud, a virtual server in the cloud.
 
 ### EC2 Instance Types - Mnemonic
 FIGHT DR. MCPXZ
+- F for FPGA
+- I for IOPS
+- G for Graphics
+- H for High Disk Throughput
+- T for Cheap general purpose
+- D for Density
+- R for RAM
+- M for Main choice for general purpose apps
+- C for Compute
+- P for Graphics (Pics)
+- X for Extreme Memory
+- Z for Extreme Memory AND CPU
 
 ### EBS
 The virtual hard disks in the cloud that EC2 uses.
@@ -469,3 +481,5 @@ EC2 fleet (multiple EC2 instances)
 - Integrates with CloudWatch to give you a dashboard of your entire estate.
 
 ## 2.30 Cloud Concepts & Technology Summary - Part 1
+
+## 2.31 Cloud Concepts & Technology Summary - Part 2
