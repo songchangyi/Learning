@@ -103,3 +103,61 @@ Set custom budgets that alert you when your costs or usage exceed your budgeted 
 Visualize, understand and manage AWS costs AFTER they have been incurred.
 
 ## 3.3 Different Support Levels
+### TAM (technical account manager)
+- Enterprise !
+
+## 3.4 Resource Groups & Tagging
+### Tags
+- KV pairs attached to AWS resources
+- Metadata
+- Can sometimes be inherited
+
+You can group resources that share one or more tags. Resources groups contain informations such as :
+- Region
+- Name
+- Employee ID
+- Departement
+
+Specific information : 
+- EC2 : public & private IP addresses
+- ELB : port configurations
+- RDS : DB engineer
+
+## 3.5 Consolidated Billing
+### AWS Organizations
+An account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrailly manage.
+
+Available in two feature sets :
+- Consolidated billing
+- All features
+
+Root->OU->AWS Account
+
+### Consolidated Billing
+- Paying account is independent. Cannot access resources of the other accounts.
+- All linked accounts are independent
+- Currently a limit of 20 linked accounts for consolidated billing
+
+### Advantages
+- One bill per AWS account
+- Easy to track charges and allocate costs
+- Volume pricing discount
+
+### Best Practices
+- Always enable multi-factor authentication on root account
+- Always use a strong and complex password on root account
+- Paying account should be used for billing purposes only
+
+### CloudTrail
+#### CloudTrail vs CloudWatch
+- CloudWatch monitors performance
+- CloudTrail monitors API calls in the AWS platform
+
+#### To use CloudTrail
+- Per AWS Account and is enabled per region
+- Consolidate logs using S3 bucket
+  1. Turn on CloudTrail in paying account
+  2. Create a bucket policy that allows cross-account access
+  3. Turn on CloudTrail in the other accounts and use the bucket in the paying account
+  
+  ## 3.6 AWS Organizations
