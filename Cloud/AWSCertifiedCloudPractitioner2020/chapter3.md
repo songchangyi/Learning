@@ -160,4 +160,15 @@ Root->OU->AWS Account
   2. Create a bucket policy that allows cross-account access
   3. Turn on CloudTrail in the other accounts and use the bucket in the paying account
   
-  ## 3.6 AWS Organizations
+## 3.6 AWS Organizations
+
+## 3.7 AWS Quick Start & AWS Landing Zone
+AWS Quick Start is a way of deploying environments quickly, using CloudFormation templates built by AWS Solutions Architects who are experts in that particular technology.
+
+AWS Landing Zone is a solution that helps customers more quickly set up a secure, multi-account AWS environment based on AWS best practices.
+
+## 3.8 Different AWS Cost Calculators
+- AWS Simple Monthly Calculator : used to calculate your running costs on AWS.
+- AWS Total Cost of Ownership (CTO) Calculator : used to compare costs of running your infrastructure on premise vs in the AWS Cloud.
+
+## 3.9 Billing & Pricing Summary
