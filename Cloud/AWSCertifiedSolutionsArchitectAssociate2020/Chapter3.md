@@ -95,3 +95,10 @@ Simple Storage Service. With a simple web servcies interface to store and retrie
 Read the S3 FAQ
 
 ## 3.6 Let's Create An S3 Bucket
+### Exam tips
+- Buckets are a universal name space
+- HTTP 200 code
+- S3, S3-IA, S3-IA (one zone), Glacier
+- Bucket ACL, Bucket policies
+
+## 3.7 S3 Pricing Tiers
