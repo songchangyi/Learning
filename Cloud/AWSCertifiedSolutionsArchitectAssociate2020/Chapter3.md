@@ -102,3 +102,26 @@ Read the S3 FAQ
 - Bucket ACL, Bucket policies
 
 ## 3.7 S3 Pricing Tiers
+### Exam tips
+Understand how to get the best value out of S3
+
+## 3.8 S3 Security And Encryption
+### The basics
+All newly created buckets are private by default.
+- Bucket policies
+- ACL
+
+S3 buckets can be configured to create access logs which log all requests made to the S3 bucket.
+
+Encryption in transit is achieved by
+- SSL/TLS
+
+Encryption at rest (server side) is achieved by
+- S3 managed keys - SSE-S3 (Amazon manage)
+- AWS key management service, managed keys - SSE-KMS (you and Amazon)
+- Server side Encryption with customer provided keys - SSE-C
+
+Client side encryption
+
+## 3.9 S3 Version Control
+
