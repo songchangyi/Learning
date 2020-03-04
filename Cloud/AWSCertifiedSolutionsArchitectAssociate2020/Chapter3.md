@@ -124,4 +124,49 @@ Encryption at rest (server side) is achieved by
 Client side encryption
 
 ## 3.9 S3 Version Control
+### Using versioning with S3
+- Store all versions of an object (all writes & delete)
+- Great backup tool
+- Once enabled, versioning cannot be disabled only suspended
+- Integrates with lifecycle rules
+- Versioning's MFA delete capability can be used to provide an additional layer of security
 
+## 3.10 S3 Lifecycle Management and Glacier
+Lifecycle rules enable you to automatically transition objects
+### Exam tips
+- Automates moving your objects between the different storage tiers
+- Can be used in conjunction with versioning
+- Can be applied to current versions and previous versions
+
+## 3.11 AWS Organizations
+### Definition
+An account management service that enables you to consolidate multiple AWS account into an organization that you create and centrally manage.
+### Advantages of consolidated billing
+- One bill per AWS account
+- Easy to track charges and allocate costs
+- Volume pricing discount
+### Exam tips
+- Always enable multi-factor authentication on root account
+- Always use a strong and complex password on root account
+- Paying account should be used for billing purposes only
+- Enable/Disable AWS services using Service Control Policies (SCP) either on OU or on individual accounts
+
+## 3.12 Sharing S3 Buckets Between Accounts
+### 3 different ways
+- Using bucket policies & IAM. Programmatic Access Only
+- Using bucket ACLs & IAM (individual objects). Programmatic Access Only
+- Cross-account IAM roles. Programmatic and console access
+
+## 3.13 Cross Region Replication
+### Exam tips
+- Versioning must be enabled on both the source and destination buckets
+- Regions must be unique
+- Files in an existing bucket are not replicated automatically
+- All subsequent updated files will be replicated automatically
+- Delete markers are not replicated
+- Deleting individual versions or delete markets will not be replicated
+
+## 3.14 Transfer Acceleration
+S3 transfer acceleration utilises the CloudFront Edge Network to accelerate your uploads to S3.
+
+## 3.15 CloudFront Overview
