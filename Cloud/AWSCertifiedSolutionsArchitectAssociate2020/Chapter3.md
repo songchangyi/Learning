@@ -170,3 +170,32 @@ An account management service that enables you to consolidate multiple AWS accou
 S3 transfer acceleration utilises the CloudFront Edge Network to accelerate your uploads to S3.
 
 ## 3.15 CloudFront Overview
+### Definition
+A content delivery network (CDN) is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
+
+### Key terminology
+- Edge location : the location where content will be cached
+- Origin : origin of all the files that the CDN will distribute. This can be an S3 bucket, an EC2 instance, an Elastic Load Balancer, or Route53
+- Distribution : consists of a collection of Edge Locations
+  - Web distribution : Typically used for websites
+  - RTMP : used for Media Streaming
+
+### Exam tips
+- Edge Locations are not just READ only - you can write to them too
+- Objects are cached for the life of the TTL
+- You can clear cached objects but will be charged
+
+## 3.16 CloudFront Lab
+
+## 3.17 Snowball Overview
+A petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS.
+
+50TB or 80TB size, tamper-resistant, chain-of-custody
+
+Snowball Edge : 100TB data transfer device with on-board storage and compute capabilities
+
+Snowmobile : an exabyte-scale data transfer device (100PB)
+
+## 3.20 Snowball Lab
+
+## 3.21 Storage Gateway
