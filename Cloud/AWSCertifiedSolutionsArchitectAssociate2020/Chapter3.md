@@ -199,3 +199,13 @@ Snowmobile : an exabyte-scale data transfer device (100PB)
 ## 3.20 Snowball Lab
 
 ## 3.21 Storage Gateway
+### Definition 
+A service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
+### 3 types of storage
+- File Gateway (NFS&SMB) : files are stored as objects
+- Volume Gateway (iSCSI) : disk volumes -> snapshot
+  - stored volumes (1GB-16TB) : entire dataset is stored on site and is asynchronously backed up to S3
+  - cached volumes (1GB-32TB) : entire dataset is stored on S3 and the most frequently accessed data is cached on site
+- Tape Gateway (VTL, Virtual Tape Library) : archive data
+
+## 3.22 Athena vs Macie
