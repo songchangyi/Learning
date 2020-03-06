@@ -209,3 +209,19 @@ A service that connects an on-premises software appliance with cloud-based stora
 - Tape Gateway (VTL, Virtual Tape Library) : archive data
 
 ## 3.22 Athena vs Macie
+### Athena
+Interactive query service which enables you to analyse and query data located in S3 using standard SQL
+- Serverless
+- No need to set up complex ETL processes
+- Works directly with data stored in S3
+
+### Usage
+- query log files
+- generate business reports
+- analyse AWS cost and usage reports
+- run queries on click-steam data
+
+### Macie
+Security service which uses ML and NLP to discover, classify and protect sensitive data stored in S3.
+
+## 3.23 Identity Access Management & S3 Summary
