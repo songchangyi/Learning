@@ -42,3 +42,5 @@ A web service that provides resizable compute capacity in the cloud.
 - U : Bare metal
 
 ## 4.2 Let's Get Our Hands Dirty With EC2 - Part 1
+
+## 4.3 Let's Get Our Hands Dirty With EC2 - Part 2
