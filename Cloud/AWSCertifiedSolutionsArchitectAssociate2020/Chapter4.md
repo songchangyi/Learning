@@ -44,3 +44,10 @@ A web service that provides resizable compute capacity in the cloud.
 ## 4.2 Let's Get Our Hands Dirty With EC2 - Part 1
 
 ## 4.3 Let's Get Our Hands Dirty With EC2 - Part 2
+### Exam Tips
+- Termination Protection is turned off by default
+- On an EBS-backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated
+- EBS Root Volumes of your DEFAULT AMI's CAN be encrypted.
+- Additional volumes can be encrypted
+
+## 4.4 Security Groups Basics
