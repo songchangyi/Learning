@@ -93,3 +93,51 @@ EXIT
 注意EXIT仅仅断开了客户端和服务器的连接，MySQL服务器仍然继续运行。
 
 ## 实用SQL语句
+
+### 插入或替换
+如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就先删除原记录，再插入新记录。
+此时，可以使用REPLACE语句，这样就不必先查询，再决定是否先删除再插入：
+```
+REPLACE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+```
+
+### 插入或更新
+如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就更新该记录
+```
+INSERT INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99) ON DUPLICATE KEY UPDATE name='小明', gender='F', score=99;
+```
+
+### 插入或忽略
+如果我们希望插入一条新记录（INSERT），但如果记录已经存在，就啥事也不干直接忽略
+```
+INSERT IGNORE INTO students (id, class_id, name, gender, score) VALUES (1, 1, '小明', 'F', 99);
+```
+
+### 快照
+如果想要对一个表进行快照，即复制一份当前表的数据到一个新表，可以结合CREATE TABLE和SELECT：
+```
+CREATE TABLE students_of_class1 SELECT * FROM students WHERE class_id=1;
+```
+
+### 写入查询结果集
+
+如果查询结果集需要写入到表中，可以结合INSERT和SELECT，将SELECT语句的结果集直接插入到指定表中。
+
+例如，创建一个统计成绩的表statistics，记录各班的平均成绩：
+```
+CREATE TABLE statistics (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    class_id BIGINT NOT NULL,
+    average DOUBLE NOT NULL,
+    PRIMARY KEY (id)
+);
+```
+然后，我们就可以用一条语句写入各班的平均成绩：
+```
+INSERT INTO statistics (class_id, average) SELECT class_id, AVG(score) FROM students GROUP BY class_id;
+```
+
+### 强制使用指定索引
+```
+SELECT * FROM students FORCE INDEX (idx_class_id) WHERE class_id = 1 ORDER BY id DESC;
+```
