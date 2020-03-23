@@ -104,3 +104,61 @@ Quantile binning : equally group values together in bins.
   - recordIO-protobuf : creates tensor
 
 ## 4.7 Handling Missing Values
+null, NaN, NA, None, etc.
+
+### Missingness Mechanisms
+1. Missing at random (MAR)
+2. Missing completely at random (MCAR)
+3. Missing not at random (MNAR)
+
+### How to handle
+- supervised learning : most difficult, can yield best results
+- mean : quick and easy, results can vary
+- median : quick and easy, results can vary
+- mode (most common value) : quick and easy, results can vary
+- dropping rows : easiest but can dramatically change datasets
+
+## 4.8 Feature Selection
+Select most relevant features from your data to prevent over-complicating the analysis, resolving potential inaccuracies and 
+removes irrelevant features or repeated information.
+
+### Principle Component Analysis (PCA)
+
+### Feature selection use cases
+- large number of features : PCA
+- remove useless features : feature selection
+
+## 4.9 Helper Tools
+### AWS Glue
+data source => crawler => data catalog => Job (Scala, Python) => output
+
+#### Data catalog part
+- databases
+- crawlers
+
+#### ETL
+- jobs 
+  - Spark by default => Python or Scala => run ETL
+  - Python shell => traditional Python
+  - Zeppelin and Jupyter Notebooks
+
+### SageMaker
+Prepare data, build, train and deploy ML models.
+- SageMaker : adhoc
+- Glue : repetitive ETL jobs
+
+### EMR
+Fully managed Hadoop eco-system runs on multiple EC2 instances.
+
+### Athena
+### Data Pipeling
+Moving data between AWS services : 
+- DynamoDB/RDS/Redshift => Data Pipeline => EC2/ETL/EMR => Output
+
+### Use cases
+- S3, Redshift, DynamoDB, RDS, On PremiseDB : AWS Glue, use Python or Scala to transform data and output into S3
+- S3 : Athena, query data and output into S3
+- EMR : EMR, transform petabytes of distributed data and output into S3
+- RDS, EMR, DynamoDB, Redshift : Data Pipeline, transform data with EC2 and output into S3 (other language than Python/Scala)
+
+## 4.10 Exam tips
