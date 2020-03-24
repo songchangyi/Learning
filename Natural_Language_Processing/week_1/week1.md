@@ -127,3 +127,22 @@ Popular for training linear models.
 - lots of features
 - fast and scales well
 
+# Simple deep learning for text classification
+## Neural networks for words
+### Neural way (dense)
+Word2Vec property : words that have similar context tend to have collinear vectors
+
+You can just average pre-trained word2vec vectors for your text
+
+### A better way : 1D convolutions
+Represent 2-grams : convolve the word vectors that are near (in one direction)
+
+### Let's train many filters
+- 3,4,5-gram windows with 100 filters each (max pooling)
+- MLP on top of these 300 features
+
+## Neural networks for characters
+### 1D convolutions on characters
+### Max pooling
+
+The deep models work better for large datasets.
