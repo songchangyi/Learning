@@ -162,3 +162,18 @@ Moving data between AWS services :
 - RDS, EMR, DynamoDB, Redshift : Data Pipeline, transform data with EC2 and output into S3 (other language than Python/Scala)
 
 ## 4.10 Exam tips
+
+## 4.11 Data Preparation Lab
+### Hints
+- Use Athena to query the data collected to answer business questions
+- Setup an AWS Glue job to run Apache Spark to transform data and convert to CSV format
+
+### Beginner path
+1. AWS Glue, AWS Data catalog, Add tables using a crawler
+2. Choose S3 as data store, Choose data bucket, Create an IAM role, Run on demand as Frequency
+3. Configure crawler's output : add database, finish
+4. Run crawler, generate metadata and table automatically in AWS Glue
+5. Go to Athena, use SQL queries to answer business questions
+6. Return to Glue, select jobs, Add jobs, select IAM role, choose data source and target, S3 + CSV
+7. Create bucket in S3, enable access in IAM Policy
+8. Choose S3 path, map columns, save job and edit script, save, run job
