@@ -42,3 +42,15 @@ Show the various elements and what your data is made of.
 Graphs represent value as color
 
 ## 5.8 Exam Tips
+
+## 5.9 Data Analysis and Visualization Lab
+### Tips
+- Use Amazon QuickSight or Jupyter Notebooks
+### Beginner
+- Create S3 bucket, upload file
+- Go to QuickSight, sign up, select S3 and choose the bucket, login
+- New analysis, new data set, connect, edit/preview data, Save and visualize
+- Choose visual types, add variables, Format visuals to add labels
+- Go to SageMaker, Notebook instances, create new IAM, create notebook instance
+- Open jupyter, New jupyter notebook
+- Return back to QuickSight, manage QuickSight, unsubscribe
