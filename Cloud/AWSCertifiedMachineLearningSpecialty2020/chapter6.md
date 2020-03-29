@@ -104,3 +104,13 @@ CloudWatch
 ## 6.6 Exam tips
 
 ## 6.7 Modeling Lab
+### Identifying sensor locations
+### Hints
+- use SageMaker and the Kmeans to locate the 10 best locations
+- visualize the locations in QuickSight
+### Beginners
+- go to S3, create a bucket, upload data
+- SageMaker, create notebook instance
+- upload jupyter notebook, import libraries, load data, data cleaning, transforming, preparation
+- create algo, job name, fit
+- deserialization model, import mxnet, save data into S3, dataviz in QuickSight
