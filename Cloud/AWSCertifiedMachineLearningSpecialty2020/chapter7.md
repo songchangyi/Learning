@@ -144,3 +144,7 @@ point forecast vs probabilistic forecast
 - Fraud detection
 
 ## 7.13 Exam Tips
+
+## 7.14 Algorithms Lab
+- make sure the data is available, create and upload a bucket if necessary
+- go to SageMaker, start our notebook instance, open jupyter
