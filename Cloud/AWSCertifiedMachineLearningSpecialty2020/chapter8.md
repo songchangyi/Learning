@@ -70,4 +70,4 @@ Use the newly optimized hyperparameters to rerun our training job. Compare the r
 - Train mode, S3 location, add channel for validation data, output path, Next
 - Instance type, maximum training jobs, create jobs
 - Best training job, CloudWatch, Logs
-- rerun the jupyter notebook with optimized hyperparameters
+- rerun the jupyter notebook with optimized hyperparameters, stop notebook instance
