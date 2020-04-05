@@ -133,3 +133,12 @@ Simply call the .deploy() method after training. Create an API Gateway endpoint.
 - Go to IAM, find the role, attach policies, full access
 - Go back to Lambda, paste Python code, create environment variables, endpoint name
 - API Gateway, Get started, Create new API, name, Create API, Actions, POST, Lambda function, Save, Test with JSON data, Actions, Deploy API
+
+## 9.10 Deconstruction Lab
+- API Gateway : Actions, Delete API
+- SageMaker : 
+  - Endpoints : Actions, Delete
+  - Instances : Actions, Stop, Actions, Delete
+- S3 : select bucket and delete
+- Lambda : select Lambda function and delete it
+- QuickSight : Manage QuickSight, Account settings, unsubscribe
