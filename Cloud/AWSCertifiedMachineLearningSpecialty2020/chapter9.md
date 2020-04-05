@@ -88,3 +88,48 @@ VPC, API Gateway
 model.tar.gz
 
 ## 9.6 Security
+- Visibility : VPC Endpoints, Network Access Control Lists, Security Groups
+- Authentication : Identity and Access Management
+- Access Control : Identity and Access Management
+- Encryption : Key Management Service
+
+-> AWS, VPC, NETWORK ACL, SECURITY GROUP, EC2, VPC Endpoint, S3
+### VPC Endpoint
+A way to access other AWS services using the AWS network without having to send traffic over the public Internet.
+
+2 types of VPC Endpoints :
+- Interface Endpoints : DNS redirection
+- Gateway Endpoints : only for S3, DynamoDB, differ
+### Notebook Instances
+1. Internet-enabled by default
+2. Can disable Internet access
+3. Designed for single user
+### IAM policies
+Identity-based policy vs. Resource-based policy
+### Encryption
+- Encryption at rest : encryption key
+- Encryption in transit
+
+## 9.7 Monitor and Evaluate
+### Amazon CloudWatch
+1. Wide variety of metrics
+2. Near real-time
+3. Metrics available for 15 months
+4. 2 week limit on console
+### CloudTrail
+1. Log API access
+2. Last 90 Day's events
+3. Can be kept indefinitely
+4. Query with Amazon Athena
+
+## 9.8 Exam tips
+
+## 9.9 Implementation and Operations Lab
+### Hints
+Simply call the .deploy() method after training. Create an API Gateway endpoint.
+### Beginner
+- Navigate to SageMaker, notebook instances, open jupyter, run code
+- Open Lambda, create function, name, python, IAM role
+- Go to IAM, find the role, attach policies, full access
+- Go back to Lambda, paste Python code, create environment variables, endpoint name
+- API Gateway, Get started, Create new API, name, Create API, Actions, POST, Lambda function, Save, Test with JSON data, Actions, Deploy API
