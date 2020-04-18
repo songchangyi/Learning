@@ -80,7 +80,7 @@ y = argmax P(y|x) = argmax P(x, y) (x is independent to y)
 ![p(y)\approx  \prod_{t=1}^T p(y_t|y_{t-1})](https://render.githubusercontent.com/render/math?math=p(y)%5Capprox%20%20%5Cprod_%7Bt%3D1%7D%5ET%20p(y_t%7Cy_%7Bt-1%7D))
 
 2. Output independence : 
-![p(x|y)\approx  \prod_{t=1}^T p(x_t|y_t})](https://render.githubusercontent.com/render/math?math=p(x%7Cy)%5Capprox%20%20%5Cprod_%7Bt%3D1%7D%5ET%20p(x_t%7Cy_t%7D))
+![p(x|y) \approx \prod_{t=1}^T p(x_t|y_t})](https://render.githubusercontent.com/render/math?math=p(x%7Cy)%20%5Capprox%20%5Cprod_%7Bt%3D1%7D%5ET%20p(x_t%7Cy_t%7D))
 
 ### Text generation in HMM
 - choose the next PoS tag given the previous tag
