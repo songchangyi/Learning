@@ -120,22 +120,66 @@ Complexity : change O(n^m) to O(m * n^2)
 ## MEMMs, CRFs and other sequential models for Named Entity Recognition
 ### HMM
 ![p(y,x)=\prod_{t=1}^T p(y_t|y_{t-1})p(x_t|y_t)](https://render.githubusercontent.com/render/math?math=p(y%2Cx)%3D%5Cprod_%7Bt%3D1%7D%5ET%20p(y_t%7Cy_%7Bt-1%7D)p(x_t%7Cy_t))
+
+- Generative model
+- Label_y => Output_y, Label_{y-1} => Label_y
 ### MEMM (Maximum Entropy Markov Model)
 ![p(y|x)=\prod_{t=1}^T p(y_t|y_{t-1},x_t)](https://render.githubusercontent.com/render/math?math=p(y%7Cx)%3D%5Cprod_%7Bt%3D1%7D%5ET%20p(y_t%7Cy_%7Bt-1%7D%2Cx_t))
 
-Discriminative model
-
+- Discriminative model
+- x_i + y_{i-1} => y_i
 ### CRF (Conditional Random Field)
+![p(y|x)= \frac{1}{Z(x)} \prod_{t=1}^T exp(\sum_{k=1}^K  \theta_k f_k(y_t, y_{t-1}, x_t))](https://render.githubusercontent.com/render/math?math=p(y%7Cx)%3D%20%5Cfrac%7B1%7D%7BZ(x)%7D%20%5Cprod_%7Bt%3D1%7D%5ET%20exp(%5Csum_%7Bk%3D1%7D%5EK%20%20%5Ctheta_k%20f_k(y_t%2C%20y_%7Bt-1%7D%2C%20x_t)))
 
+- Discriminative model
+- Need more calculate to get Z(x)
+- Undirected graph
+- Black-box implementations : CRF++, MALLET, GRMM, CRFSuite, FACTORIE
+### Features engineering
+capital letters, predefined word list, etc.
 
 # Deep Learning for the same tasks
+
 ## Neural Language Models
+### Recap : Language modeling
 ### Curse of dimensionality
+One hot encoding is not good
 ### How to generalize better
-- Learn distributed representations for words
+- Learn distributed representations for words : C^(|V| * m)
 - Express probabilities of sequences and learn parameters
 ### Probabilistic Neural Language Model
 - Softmax over components of y
-- Feed-forward NN with tons of parameters
-- Distributed representation of context words
+- Feed-forward NN with tons of parameters : y = b + Wx + Utanh(d+Hx)
+  - y_dim = V * 1
+  - b_dim = V * 1
+  - W_dim = V * (m * (n-1))
+  - x_dim = (n-1) * 1
+- Distributed representation of context words : x = [C(w_{i-n+1}),...C(w{i-1})]^T
+### Log-Bilinear Language Model
+- much less params and non-linear activations
+- measures similarity between the word and the context
+- Representation of word :
+![r_{w_i}=C(w_i)^T](https://render.githubusercontent.com/render/math?math=r_%7Bw_i%7D%3DC(w_i)%5ET)
+- Representation of context :
+![\widehat{r}=\sum_{k=1}^{n-1} W_k C(w_{i-k})^T ](https://render.githubusercontent.com/render/math?math=%5Cwidehat%7Br%7D%3D%5Csum_%7Bk%3D1%7D%5E%7Bn-1%7D%20W_k%20C(w_%7Bi-k%7D)%5ET%20)
 
+## Whether you need to predict a next word or a label - LSTM is here to help!
+### Recap : RNN
+![h_i=f(Wh_{i-1}+Vx_i+b)](https://render.githubusercontent.com/render/math?math=h_i%3Df(Wh_%7Bi-1%7D%2BVx_i%2Bb))
+
+![y_i=Uh_i+ \widetilde{b} ](https://render.githubusercontent.com/render/math?math=y_i%3DUh_i%2B%20%5Cwidetilde%7Bb%7D%20)
+
+### Train
+Cross-entropy loss (for one position)
+### Use
+- Feed the previous output as the next input
+- Take argmax at each step or use beam search (always 5 sequences)
+### RNN Language Model
+- Lower perplexity and word error rate than 5-gram model with Knesser-Ney smoothing
+- Char level RNNs can be very effective
+### Bi-directional LSTM
+- Universal approach for sequence tagging
+- stack layers + add layers on top
+- trained by cross-entropy loss
+
+Sequences tagging tasks : Bi-directional LSTM/CRF
