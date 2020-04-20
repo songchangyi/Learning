@@ -19,3 +19,16 @@
 - W=C and X is a symmetric matrix
 
 ## Explicit and implicit matrix factorization
+### Singular Value Decomposition (SVD)
+X = U (eigenvector in column) * Sigma (square roots of eigenvaleus on the diagonal) * V^T (eigenvector in row)
+- keep only first k components
+### Weighted squared loss : GloVe
+### Word prediction : skip-gram model
+- predict context words given a focus word
+- model each probability with a softmax
+### Skip-gram Negative Sampling (SGNS)
+Instead of predicting a word for another word, predict yes or no for word pairs.
+- use positive examples from data
+- sample negative examples
+
+## Word2vec and doc2vec (and how to evaluate them)
