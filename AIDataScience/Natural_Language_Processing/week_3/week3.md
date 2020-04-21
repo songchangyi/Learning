@@ -32,3 +32,58 @@ Instead of predicting a word for another word, predict yes or no for word pairs.
 - sample negative examples
 
 ## Word2vec and doc2vec (and how to evaluate them)
+### Word2Vec
+Open source and fast
+#### Two architectures
+- CBOW (Continuous Bag-of-words)
+- Continuous Skip-gram (SGNS)
+#### Two ways to avoid softmax (too slow)
+- negative sampling
+- hierarchical softmax
+### Evaluation : word similarities
+- human judgements
+- Spearman's correlation
+### Evaluation : word analogies
+man:woman is as king:queen
+### Doc2Vec
+- DM : p(w_i|w_{i-h}...w_{i+h}|d)
+- DBOW : p(w_{i-h}...w_{i+h}|d)
+### Evaluation : document similarities
+
+## Word analogies without magic: king – man + woman != queen
+### BATS dataset
+#### Inflectional morphology
+#### Derivational morphology
+#### Lexicographic semantics
+#### Encyclopeidc semantics
+### Resume
+- word2vec works fine for word similarities but there are many questions with word analogies
+
+## Why words? From character to sentence embeddings
+### Morphology can help
+Problems:
+- Languages with rich morphology
+- Low frequency words, OVV words
+### FastText
+- Represent a word as a bag of character n-grams
+- Model a word vector as a sum of sub-word vectors
+### Sent2Vec
+First ideas :
+- Average pre-trained word vectors (word2vec, GloVe, etc)
+- Maybe use TF-IDF weights for averaging
+
+Sent2Vec
+- Learn sent embedding as a sum of sub-sentence units
+### StarSpace
+entities and features
+#### Mode 3 (sentence embeddings)
+Data format : each line is a collection of similar sentences : sent1_word1 sent1_word2...<tab> sent2_word1 sent2_word2
+  
+### Deep Leaning
+- Recurrent Neural Networds (sequence modelling)
+- Convolutional Neural Networks (much faster)
+- Recursive Neural Networks (hierarchical structure)
+### Skip-thought vectors
+- Predict next and previous sentences in text
+- RNN encoder-decoder architecture
+
