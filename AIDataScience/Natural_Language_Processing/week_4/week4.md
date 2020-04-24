@@ -49,3 +49,6 @@ Words can disappear or appear from nowhere
 p(f,a|e,theta)
 2. Likelihood maximization for the incomplete data
 3. EM-algorithm
+
+# Encoder-decoder-attention architecture
+## Encoder-decoder architecture
