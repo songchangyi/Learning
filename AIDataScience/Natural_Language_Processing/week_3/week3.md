@@ -87,3 +87,29 @@ Data format : each line is a collection of similar sentences : sent1_word1 sent1
 - Predict next and previous sentences in text
 - RNN encoder-decoder architecture
 
+# Topic models
+## Topic modeling: a way to navigate through text collections
+A soft bi-clustering
+### The formal task
+- Given : collection of texts as BOW
+- Find : probabilities of word in topics & probabilities of topic in documents
+### Generative model of texts
+Probabilistic Latent Semantic Analysis (PLSA) :
+![p(w|d)=\sum p(w|t)p(t|d) ](https://render.githubusercontent.com/render/math?math=p(w%7Cd)%3D%5Csum%20p(w%7Ct)p(t%7Cd)%20)
+
+## How to train PLSA?
+### Train
+Log-likelihood optimization
+### We have just plain texts
+![p(t|d,w)=\frac{p(w,t|d)}{p(w|d)}=\frac{p(w|t)p(t|d)}{p(w|d)}](https://render.githubusercontent.com/render/math?math=p(t%7Cd%2Cw)%3D%5Cfrac%7Bp(w%2Ct%7Cd)%7D%7Bp(w%7Cd)%7D%3D%5Cfrac%7Bp(w%7Ct)p(t%7Cd)%7D%7Bp(w%7Cd)%7D)
+### Put everything together EM-algorithm
+
+## The zoo of topic models
+### Latent Dirichlet Allocation
+### Hierarchical topic models
+### Dynamic topic models
+### Multilingual topic models
+### Additive Regularization for Topic Models
+### Regularized EM-algorithm
+### Visualization
+textvis.lnu.se
