@@ -27,6 +27,7 @@ by some action.
 The advantage to using cloud-based data storage is you can scale to meet your needs.
 
 > Summary
+
 > Every business has different needs and requirements. 
 Cloud computing is flexible and cost-efficient, which can be beneficial to every business, 
 whether it's a small start-up or a large enterprise.
