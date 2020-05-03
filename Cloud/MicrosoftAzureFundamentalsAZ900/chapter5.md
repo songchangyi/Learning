@@ -9,3 +9,28 @@ Tools that are commonly used for day-to-day management and interaction include:
 
 ## Navigate the portal
 
+### What is the Azure Marketplace?
+The Azure Marketplace is often where you start when creating new resources in Azure. The Marketplace allows customers to find, try, purchase, and provision applications and services from hundreds of leading service providers, all certified to run on Azure.
+
+### Azure Advisor
+Azure Advisor is a free service built into Azure that provides recommendations on high availability, security, performance, operational excellence, and cost.
+
+## Azure Portal dashboards
+
+### What is a dashboard?
+A dashboard is a customizable collection of UI tiles displayed in the Azure portal.
+
+### Explore the default dashboard
+These default web parts are
+1. Dashboard controls
+2. All resources tile
+3. Quickstarts + tutorials tile
+4. Service Health tile
+5. Marketplace tile
+
+## Access public and private preview features
+
+### Feature preview categories
+- Private Preview : available to specific Azure customers for evaluation purposes
+- Public Preview : available to all Azure customers for evaluation purposes
+
