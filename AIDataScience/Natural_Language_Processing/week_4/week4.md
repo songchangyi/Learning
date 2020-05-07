@@ -51,4 +51,91 @@ p(f,a|e,theta)
 3. EM-algorithm
 
 # Encoder-decoder-attention architecture
+
 ## Encoder-decoder architecture
+### Sequence to sequence
+- Encoder : maps the source sequence to the hidden vector
+- Decoder : performs language modeling given this vector
+- Prediction : softmax
+### Hidden representations are good
+But still a bottleneck
+
+## Attention mechanism
+- Encoder states are weighted to obtain the representation relevant to the decoder state
+- The weights are learnt and should find the most relevant encoder positions
+
+### How to compute attention weights
+- Additive attention
+- Multiplicative attention
+- Dot product also works
+
+### Is the attention similar to what humans do
+- For humans : saves time
+- For machines : wastes time
+
+### Local attention
+1. Find the most relevant position a_j in the source
+  - Monotonic alignments
+  - Predictive alignments
+2. Attend only positions within a window [a_j-h;a_j+h]
+  - Compute scores as usual
+  - Probably multiply by a Gaussian centered in a_j
+  
+## How to deal with a vocabulary?
+### Outline
+- Computing softmax for a large vocabulary is slow
+- Even a large vocabulary has OOV words
+
+### Hierarchical softmax
+0 to left and 1 to right
+
+How to construct a tree : balanced vs. semantic
+- Based on some pre-built ontology
+- Based on semantic clustering from data
+- Huffman tree
+- Random
+
+### Scaling softmax
+
+### Copy mechanism
+What do we do with OOV words ? (Scaling softmax is insufficient)
+- know the word alignments
+- Learn relative positions for UNK tokens with NMT
+- Post-process the translation
+
+### Towards open vocabulary
+Still problems
+
+### Character-based models
+
+### Hybrid models : the best of two worlds
+- work mostly on words level
+- go to characters when needed
+
+### Byte-pair encoding
+
+## How to implement a conversational chat-bot?
+
+### Chatbot
+Goal-oriented
+- narrow domain
+- specific questions and tasks
+- example : call center
+- model : usually retrieval-based
+
+Chit-chat
+- general conversation
+- human-like experience
+- example : entertaining bot
+- model ; generative
+
+### Padding
+- EOS : end of sentence
+- PAD : filler
+- GO : start decoding
+- UNK : unknown word
+
+### Bucketing
+Putting sentences into buckets of different sizes.
+
+
