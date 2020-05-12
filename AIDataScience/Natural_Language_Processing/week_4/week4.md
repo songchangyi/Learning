@@ -138,4 +138,26 @@ Chit-chat
 ### Bucketing
 Putting sentences into buckets of different sizes.
 
+# Summarization and simplification tasks
+
+## Sequence to sequence learning: one-size fits all?
+
+### Summarization
+- Origin Text
+- Extractive Summary
+- Abstractive Summary
+
+### Simplification
+- Splitting
+- Deletion
+- Paraphrasing
+
+Simplicity, Relevance, Fluency
+
+### Measure simplicity
+SARI (system against references and input)
+
+## Get to the point! Summarization with pointer-generator networks
+
+Rouge score
 
