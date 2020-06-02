@@ -2,7 +2,6 @@
 
 Lab resource : https://github.com/MicrosoftLearning/DP100
 
-Course link : https://app.pluralsight.com/paths/skill/microsoft-azure-data-scientist-dp-100
+Course link : https://docs.microsoft.com/en-us/learn/certifications/courses/dp-100t01
 
-Reference : 
-- DP-100T01-A - Designing and Implementing a Data Science Solution on Azure
+Pluralsight : https://app.pluralsight.com/paths/skill/microsoft-azure-data-scientist-dp-100
