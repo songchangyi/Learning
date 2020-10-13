@@ -15,7 +15,6 @@ Everywhere, such as :
 - cache answers
 
 #### Complexity
-
 | Action      | Static| Dynamic  |
 | ----------- |------| -----|
 | Access      | O(1) | O(1) |
