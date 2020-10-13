@@ -15,15 +15,10 @@ Everywhere, such as :
 - cache answers
 
 #### Complexity
-| Action | Static | Dynamic |
-| --- | --- |
-| Access | O(1) | O(1) |
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Action        | Static           | Dynamic  |
+| ------------- |-------------| -----|
+| Access      | O(1) | O(1) |
 
 #### Static array usage
 
