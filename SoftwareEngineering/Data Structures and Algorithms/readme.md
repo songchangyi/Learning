@@ -9,3 +9,6 @@
 ### Exercises
 - [花花酱 LeetCode Problem List 题目列表](https://zxi.mytechroad.com/blog/leetcode-problem-categories/)
 - [Leetcode 分类顺序表](https://cspiration.com/leetcodeClassification)
+
+### Other
+- [LeetCode总结](https://blog.csdn.net/linhuanmars/category_2336231.html)
