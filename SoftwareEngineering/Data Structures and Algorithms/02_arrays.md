@@ -23,10 +23,17 @@ Everywhere, such as :
 | Apppending  | O(1) | O(1) |
 | Deletion    | O(1) | O(n) |
 
-#### Static array usage
+#### Static array
+- 44,12,-5
+- 0,1,2
 
-
+#### Dynamic array
+Can grom and shrink in size
+- A.add()
+- Ad.remove()
 
 ### Dynamic Array implementation
+A way is to use a static array and keep tracking the number of array.
 
 ### Code implementation
+- [Source code link](https://github.com/williamfiset/data-structures)
