@@ -30,7 +30,7 @@ Everywhere, such as :
 #### Dynamic array
 Can grom and shrink in size
 - A.add()
-- Ad.remove()
+- A.remove()
 
 ### Dynamic Array implementation
 A way is to use a static array and keep tracking the number of array.
@@ -40,3 +40,35 @@ A way is to use a static array and keep tracking the number of array.
 
 ### LeetCode Questions
 11, 26, 27, 41, 42, 45, 55, 80, 121, 122, 123, 128, 134, 164, 188, 189, 217, 243, 244, 245, 274, 275, 277, 287, 299, 309, 334
+
+Practice records :
+
+| Num | 1 | 2 | 3 |
+|-----|---|---|---|
+| 11  | N |   |   |
+| 26  |   |   |   |
+| 27  |   |   |   |
+| 41  |   |   |   |
+| 42  |   |   |   |
+| 45  |   |   |   |
+| 55  |   |   |   |
+| 80  |   |   |   |
+| 121 |   |   |   |
+| 122 |   |   |   |
+| 123 |   |   |   |
+| 128 |   |   |   |
+| 134 |   |   |   |
+| 164 |   |   |   |
+| 188 |   |   |   |
+| 189 |   |   |   |
+| 217 |   |   |   |
+| 243 |   |   |   |
+| 244 |   |   |   |
+| 245 |   |   |   |
+| 274 |   |   |   |
+| 275 |   |   |   |
+| 277 |   |   |   |
+| 287 |   |   |   |
+| 299 |   |   |   |
+| 309 |   |   |   |
+| 334 |   |   |   |
