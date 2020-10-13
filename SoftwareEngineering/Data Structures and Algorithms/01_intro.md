@@ -16,4 +16,7 @@ Examples :
 - space
 
 ### Big-O Notation
-Gives an upper bound of the complexity in the <b>worst</b> case
+Gives an upper bound of the complexity in the <b>worst</b> case. Helping to quantify performance.
+
+Examples :
+- O(1), O(logn), O(n), O(nlogn), O(n^2), O(n^3), O(b^n), O(n!)
