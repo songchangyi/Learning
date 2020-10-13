@@ -16,9 +16,13 @@ Everywhere, such as :
 
 #### Complexity
 
-| Action        | Static           | Dynamic  |
-| ------------- |-------------| -----|
+| Action      | Static| Dynamic  |
+| ----------- |------| -----|
 | Access      | O(1) | O(1) |
+| Search      | O(n) | O(n) |
+| Insertion   | - | O(n) |
+| Apppending  | O(1) | O(1) |
+| Deletion    | O(1) | O(n) |
 
 #### Static array usage
 
