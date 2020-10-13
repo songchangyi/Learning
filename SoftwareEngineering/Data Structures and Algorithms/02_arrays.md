@@ -20,8 +20,8 @@ Everywhere, such as :
 | Access      | O(1) | O(1) |
 | Search      | O(n) | O(n) |
 | Insertion   | - | O(n) |
-| Apppending  | O(1) | O(1) |
-| Deletion    | O(1) | O(n) |
+| Apppending  | - | O(1) |
+| Deletion    | - | O(n) |
 
 #### Static array
 - 44,12,-5
