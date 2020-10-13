@@ -39,4 +39,4 @@ A way is to use a static array and keep tracking the number of array.
 - [Source code link](https://github.com/williamfiset/data-structures)
 
 ### LeetCode Questions
-27, 26, 80, 277, 189, 41, 299, 134, 274, 275, 243, 244, 245, 217, 55, 45, 121, 122, 123, 188, 309, 11, 42, 334, 128, 164, 287
+11, 26, 27, 41, 42, 45, 55, 80, 121, 122, 123, 128, 134, 164, 188, 189, 217, 243, 244, 245, 274, 275, 277, 287, 299, 309, 334
