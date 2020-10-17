@@ -35,7 +35,7 @@ A sequential list of nodes which point to other nodes.
 | 24  | Y |   |   |
 | 82  | N |   |   |
 | 83  | N |   |   |
-| 92  |   |   |   |
+| 92  | N |   |   |
 | 141 |   |   |   |
 | 160 |   |   |   |
 | 203 |   |   |   |
