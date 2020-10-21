@@ -24,4 +24,11 @@ A linear data structure models real world queues.
 | Removal | O(n) |
 | Is Empty | O(1) |
 
-### BFS example
+### Leetcode questions
+
+| Num | 1 | 2 | 3 |
+|-----|---|---|---|
+| 621 | N |   |   |
+| 622 | N |   |   |
+| 641 |   |   |   |
+| 933 | Y |   |   |
