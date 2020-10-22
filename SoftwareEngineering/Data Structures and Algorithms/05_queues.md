@@ -30,5 +30,5 @@ A linear data structure models real world queues.
 |-----|---|---|---|
 | 621 | N |   |   |
 | 622 | N |   |   |
-| 641 |   |   |   |
+| 641 | N |   |   |
 | 933 | Y |   |   |
