@@ -13,9 +13,9 @@ A hash function is a function that maps a key to a whole number in a fixed range
 ### Collision resolution methods
 1. Separate chaining : maintain a DS to hold all the different values
 2. Open addressing : find another place to offset the object
-  -. Linear probing
-  -. Quadratic probing
-  -. Double hash
+  - Linear probing
+  - Quadratic probing
+  - Double hash
 
 ### Complexity analysis
 | Operation | Average | Worst |
