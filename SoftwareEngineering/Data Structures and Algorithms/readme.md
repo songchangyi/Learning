@@ -12,3 +12,12 @@
 
 ### Other
 - [LeetCode总结](https://blog.csdn.net/linhuanmars/category_2336231.html)
+
+### 分类总结
+
+【递归与回溯】
+- [一篇总结带你彻底搞透回溯算法！](https://mp.weixin.qq.com/s/r73thpBnK1tXndFDtlsdCQ)
+- [Python回溯算法](https://leetcode-cn.com/problems/subsets/solution/hui-su-suan-fa-by-powcai-5/)
+
+【动态规划】
+- [动态规划万字长文](https://zhuanlan.zhihu.com/p/91582909)
