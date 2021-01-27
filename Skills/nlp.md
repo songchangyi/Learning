@@ -18,6 +18,10 @@
 ### Topic Modeling
 - LDA
 
+### Text Matching / Ranking
+- Word2Vec
+- StarSpace
+
 ### Named Entity Recognition (NER)
 - CRF
 - BiLSTM + CRF
