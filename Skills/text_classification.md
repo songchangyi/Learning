@@ -8,7 +8,7 @@
 
 ### 1.3 相关数据集以及SOTA算法表现
 
-[文本分类综述 | 迈向NLP大师的第一步（下）]中列出了一些常用数据集及其规模。
+[文本分类综述 | 迈向NLP大师的第一步（下）](https://mp.weixin.qq.com/s/YqPzFcDMhgL9-1kmx3YeZg)中列出了一些常用数据集及其规模。
 
 ### 1.4 工业界落地情况和案例分享
 
@@ -41,7 +41,9 @@
   - NDCG
 3. 解释
   - EM (Exact Match) : 预测中匹配到正确答案的百分比
-  - MRR (Mean Reciprocal Rank) ：最靠前的真实文本的排序取倒数作为准确度，再对所有问题取平均。通常用于评估在问答(QA)和信息检索(IR)任务中排序算法的性能 ![MRR](https://github.com/songchangyi/Learning/blob/master/Skills/img/mrr.jpg)
+  - MRR (Mean Reciprocal Rank)
+    - 最靠前的真实文本的排序取倒数作为准确度，再对所有问题取平均。通常用于评估在问答(QA)和信息检索(IR)任务中排序算法的性能 
+    - ![MRR](https://github.com/songchangyi/Learning/blob/master/Skills/img/mrr.jpg)
   - P@K和R@K : 前K个文本中的查准率和查全率
   - NDCG (Normalized Discounted Cumulative Gain) : 归一化折损累计增益
     - CG：将每个推荐结果相关性累加
