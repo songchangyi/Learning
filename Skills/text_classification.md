@@ -27,7 +27,7 @@
 ## 2 技术细节
 
 ### 2.1 标准流程
-![Flowchart of the text classification]()
+![Flowchart of the text classification](https://github.com/songchangyi/Learning/blob/master/Skills/img/text_classification_flowchart.png)
 
 ### 2.2 评估指标
 1. 单标签文本分类
@@ -41,7 +41,7 @@
   - NDCG
 3. 解释
   - EM (Exact Match) : 预测中匹配到正确答案的百分比
-  - MRR (Mean Reciprocal Rank) ：最靠前的真实文本的排序取倒数作为准确度，再对所有问题取平均。通常用于评估在问答(QA)和信息检索(IR)任务中排序算法的性能 ![MRR]()
+  - MRR (Mean Reciprocal Rank) ：最靠前的真实文本的排序取倒数作为准确度，再对所有问题取平均。通常用于评估在问答(QA)和信息检索(IR)任务中排序算法的性能 ![MRR](https://github.com/songchangyi/Learning/blob/master/Skills/img/mrr.jpg)
   - P@K和R@K : 前K个文本中的查准率和查全率
   - NDCG (Normalized Discounted Cumulative Gain) : 归一化折损累计增益
     - CG：将每个推荐结果相关性累加
