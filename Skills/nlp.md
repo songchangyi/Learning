@@ -34,5 +34,6 @@
   - ResponseSelector : Chitchat, FAQs
   - LexicalGrammarFeaturizer
 - IBM Watson Assistant (Unknown)
+
 #### Knowledge-base Bot
 - ElasticSearch
