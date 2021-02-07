@@ -1,6 +1,7 @@
 # Spark SQL
 
 ## References
+- [Apache Spark SQL Guide](https://spark.apache.org/docs/latest/sql-getting-started.html)
 - [PySpark Tutorial](https://www.youtube.com/playlist?list=PL9ooVrP1hQOEBF5zdCdoMs2l1wws6be2X)
 - [PySpark SQL Tutorial](https://www.youtube.com/watch?v=jgA5Y_E7BDY)
 - [Pyspark with crossvalidation gridsearch on Kaggle](https://www.kaggle.com/suyashgulati/using-pyspark-randomforest-crossvalidatn-gridsrch)
