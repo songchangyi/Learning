@@ -24,6 +24,8 @@ VMware、KVM、Xen、Virtual Box，都属于Hypervisor
 - **从架构来看，Docker比虚拟化少了两层，取消了hypervisor层和GuestOS层，使用Docker Engine进行调度和隔离，所有应用共用主机操作系统，因此Docker较虚拟机更轻量级，在性能上优于虚拟化，接近裸机性能**
 - 从应用场景来看，Docker和虚拟化则有各自擅长的领域，在软件开发、测试场景和生产运维场景中各有优劣
 
+- [Docker容器与虚拟机区别](https://www.cnblogs.com/pangguoping/articles/5515286.html)
+
 ### 容器和镜像
 简单来说，镜像是文件，容器是进程
 - 容器是由镜像实例化而来
