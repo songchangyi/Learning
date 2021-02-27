@@ -139,6 +139,9 @@ CRF详解
 - [聚类算法评估指标](https://www.biaodianfu.com/cluster-score.html)
 - [中文文本聚类实验](https://github.com/FesonX/cn-text-classifier)
 
+## 文本摘要
+- [文本自动摘要任务的“不完全”心得总结](https://zhuanlan.zhihu.com/p/83596443)
+
 ## 知识图谱
 - [知识图谱在贝壳找房的从0到1实践](https://mp.weixin.qq.com/s?__biz=MzU1NTMyOTI4Mw==&mid=2247485923&idx=1&sn=27735f64a2196ba7210503da84c90c33&chksm=fbd4bb8fcca3329939fbec3673773f005839b68cc41471075917b6063fb80ac045b01678164f&scene=21#wechat_redirect)
 
