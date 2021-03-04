@@ -1,5 +1,7 @@
 # Spark SQL
 
+Course link : https://www.coursera.org/learn/apache-spark-sql-for-data-analysts/home/welcome
+
 ## References
 - [Apache Spark SQL Guide](https://spark.apache.org/docs/latest/sql-getting-started.html)
 - [PySpark Tutorial](https://www.youtube.com/playlist?list=PL9ooVrP1hQOEBF5zdCdoMs2l1wws6be2X)
