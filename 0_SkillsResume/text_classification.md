@@ -27,7 +27,7 @@
 ## 2 技术细节
 
 ### 2.1 标准流程
-![Flowchart of the text classification](https://github.com/songchangyi/Learning/blob/master/Skills/img/text_classification_flowchart.png)
+![Flowchart of the text classification](https://github.com/songchangyi/Learning/blob/master/0_SkillsResume/img/text_classification_flowchart.png)
 
 ### 2.2 评估指标
 1. 单标签文本分类
@@ -75,3 +75,11 @@
 ## 参考文献
 - [文本分类资料综述总结](https://github.com/xiaoqian19940510/text-classification-surveys)
 - [文本分类综述 | 迈向NLP大师的第一步（下）](https://mp.weixin.qq.com/s/YqPzFcDMhgL9-1kmx3YeZg)
+
+## TODO
+- https://mp.weixin.qq.com/s/8rF2VXeKMKMpBAOlgPep8A
+- https://mp.weixin.qq.com/s/UFiZsPfXwg8lQUsGXcgHjA
+- https://mp.weixin.qq.com/s/oSOYIKO_75A2wzGg9EY8-A
+- https://mp.weixin.qq.com/s/BLLswn4L2kceFLTDFAlKNA
+- https://mp.weixin.qq.com/s/vT7XAqJXTUO5qyyB7BMWug
+- https://mp.weixin.qq.com/s/obTBTBChYfBeNRlZGjnSvQ
