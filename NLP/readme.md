@@ -5,3 +5,6 @@
 ## Sentence Transformers
 - [Official Doc](https://www.sbert.net/)
 - [Training Examples](https://www.sbert.net/examples/training/sts/README.html)
+
+## Kashgari
+- [Kashgari](https://github.com/BrikerMan/Kashgari/)
