@@ -8,3 +8,6 @@
 
 ## Kashgari
 - [Kashgari](https://github.com/BrikerMan/Kashgari/)
+
+## 中文NLP项目资源
+- [做项目一定用得到的NLP资源](https://cloud.tencent.com/developer/article/1446707)
